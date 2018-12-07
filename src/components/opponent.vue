@@ -1,14 +1,22 @@
 <template>
   <div class="opponent container-fluid ">
     <div class="row">
-      <div class="col-4">
-        {{opponent.name}}
-      </div>
-      <div class="col-6" v-for="cardopponent in opponent.hand">
-        <img :src="cardopponent.img" height="200" alt="">
-        <p>health: {{cardopponent.health}}</p>
-        <p>attack: {{cardopponent.attack}}</p>
-        <p>defense: {{cardopponent.defense}}</p>
+      <div class="col-3" v-for="cardopponent in opponent.hand">
+        <div class="card">
+          <div class="card-content">
+            <div v-if="cardopponent.visible">
+              <img class :src="cardopponent.img" alt="">
+              {{opponent.name}}
+              <h4>health: {{cardopponent.health}}</h4>
+              <h4>attack: {{cardopponent.attack}}</h4>
+              <h4>defense: {{cardopponent.defense}}</h4>
+            </div>
+            <div>
+              <img class="img-responsive" src="//placehold.it/200x300" alt="">
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

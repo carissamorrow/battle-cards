@@ -4,11 +4,13 @@
       <div class="col-4">
         {{player.name}}
       </div>
-      <div class="col-6" v-for="cardplayer in player.hand">
-        <img :src="cardplayer.img" height="200" alt="">
-        <p>health: {{cardplayer.health}}</p>
-        <p>attack: {{cardplayer.attack}}</p>
-        <p>defense: {{cardplayer.defense}}</p>
+      <div class="card" v-for="cardplayer in player.hand">
+        <div class="col-8">
+          <img :src="cardplayer.img" height="200" alt="">
+        </div>
+        <h4>health: {{cardplayer.health}}</h4>
+        <h4>attack: {{cardplayer.attack}}</h4>
+        <h4>defense: {{cardplayer.defense}}</h4>
       </div>
     </div>
   </div>

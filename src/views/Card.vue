@@ -1,11 +1,13 @@
 <template>
   <div class="Cards container-fluid">
+    <button @click="game">FIGHT!</button>
     <div class="row">
       <player class="col-12 border rounded m-2">
       </player>
     </div>
     <opponent class="col-12 border rounded m-2">
     </opponent>
+  </div>
   </div>
   </div>
 </template>
