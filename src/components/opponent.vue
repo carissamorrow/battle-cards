@@ -2,7 +2,7 @@
   <div class="opponent container-fluid ">
     <div class="row">
       <div class="col-3" v-for="cardopponent in opponent.hand">
-        <div class="card">
+        <div @click="opponentId=cardopponent.id" class="card">
           <div class="card-content">
             <div v-if="cardopponent.visible">
               {{opponent.name}}
@@ -27,7 +27,7 @@
     name: 'opponent',
     data() {
       return {
-
+        opponentId: ''
       }
     },
     computed: {

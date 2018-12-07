@@ -1,6 +1,6 @@
 <template>
   <div class="Cards container-fluid">
-    <button @click="attack">FIGHT!</button>
+    <button @click="">FIGHT!</button>
     <div class="row">
       <player class="col-12 border rounded m-2">
       </player>
