@@ -1,16 +1,24 @@
 //home view
 <template>
-  <div class="Game container-fluid">
-    <h1>Welcome To The Card Game!</h1>
-    <form v-on:submit.prevent="startGame">
-      <h3>Your Name Here:</h3>
-      <input type="text" v-model="game.gameConfig.playerName" placeholder="name">
-    </form>
-    <form @submit.prevent="set">
-      <h3>Choose a Deck:</h3>
-      <input type="number" placeholder="1">
-      <button class="btn btn-warning btn-lg" @click="startGame">Start</button>
-    </form>
+  <div class="home container-fluid">
+    <button :disabled="!ready()" :class="{'btn-success':ready()}" class="btn btn-primary" @click="startGame">Start Game</button>
+    <div class="row justify-content-around">
+      <div class="col-5">
+        <div @click="newGame.playerId=player.id" :class="{'border-success': newGame.playerId == player.id}" class="border rounded m-2"
+          v-for="player in players">
+          {{player.name}}
+          <img :src="player.img" height="200">
+        </div>
+      </div>
+      <div class="col-5">
+        <div @click="newGame.opponentId=opponent.id" :class="{'border-success': newGame.opponentId == opponent.id}"
+          class="border rounded m-2" v-for="opponent in opponents">
+          {{opponent.name}}
+          <img :src="opponent.img" height="200">
+        </div>
+      </div>
+
+    </div>
   </div>
 </template>
 
@@ -25,7 +33,11 @@
           gameConfig: {
             playerName: "",
             opponent: 1,
-            set: 4
+            set: 4,
+          },
+          newGame: {
+            playerId: -1,
+            opponentId: -1
           }
         }
       }
@@ -35,7 +47,7 @@
         this.$store.dispatch("newGame", this.game);
       },
       ready() {
-        return this.newGame.playerId > -1 && this.newGame.opponentId > -1
+        return this.game.playerId > -1 && this.game.opponentId > -1
       }
     },
 
