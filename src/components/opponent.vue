@@ -12,7 +12,7 @@
               <h4>attack: {{cardopponent.attack}}</h4>
               <h4>defense: {{cardopponent.defense}}</h4>
             </div>
-            <div>
+            <div v-else>
               <img class="img-responsive" src="//placehold.it/200x300" alt="">
             </div>
           </div>
