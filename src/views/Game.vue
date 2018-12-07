@@ -1,6 +1,7 @@
 //home view
 <template>
   <div class="Game container-fluid">
+    <h1>Welcome To The Card Game!</h1>
     <form v-on:submit.prevent="startGame">
       <h3>Your Name Here:</h3>
       <input type="text" v-model="game.gameConfig.playerName" placeholder="name">

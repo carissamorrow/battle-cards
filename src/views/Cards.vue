@@ -1,16 +1,26 @@
 <template>
   <div class="Cards">
-
+    <div class="row">
+      <player class="col-6"></player>
+      <opponent class="col-6"></opponent>
+    </div>
   </div>
 </template>
 
 <script>
 
-
   export default {
     name: 'Cards',
     components: {
-
+      player,
+      opponent
+    },
+    data() {
+      return {
+      }
+    },
+    mounted() {
+      this.$store.dispatch("getGame", this.$route.params.gameId)
     }
   }
 </script>
