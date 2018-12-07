@@ -43,21 +43,22 @@ export default new Vuex.Store({
         })
     },
     getGame({ commit }, gameId) {
-      cardapi.get("/game/" + gameId)
+      debugger
+      cardapi.get("/" + gameId)
         .then(res => {
           commit('setGame', res.data)
-          // router.push({ name: 'Game' }) not sure if i need this
+          router.push({ name: 'Game' })//is this right??
         })
     },
     startGame({ commit }, newGame) {
-      cardapi.post("/game", newGame)
+      cardapi.post("/", newGame)
         .then(res => {
           commit('setGame', res.data.game)
-          router.push({ name: 'game', params: { gameId: res.data.game._id } })
+          router.push({ name: 'Card', params: { id: res.data.game.id } })
         })
     },
     attack({ commit }, payload) {
-      cardapi.put("/game/" + payload.gameId, payload.attack)
+      cardapi.put("/" + payload.gameId, payload.attack)
         .then(res => {
           commit("setGame", res.data)
         })

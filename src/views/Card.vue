@@ -22,7 +22,15 @@
       }
     },
     mounted() {
-      this.$store.dispatch("getGame", this.$route.params.gameId)
+      if (!this.game.id) {
+        this.$store.dispatch("getGame", this.$route.params.game)
+
+      }
+    },
+    computed: {
+      game() {
+        return this.$store.state.game
+      }
     }
   }
 </script>

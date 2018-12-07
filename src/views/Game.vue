@@ -1,21 +1,23 @@
 //home view
 <template>
   <div class="game container-fluid">
-    <h1>Welcome To The Best Game EVER</h1>
+    <h1>Best Card Game EVER</h1>
     <form v-on:submit.prevent="startGame">
       <h4>Enter your name here:</h4>
       <input type="text" v-model="game.gameConfig.playerName" placeholder="name">
     </form>
-    <form @submit.prevent="set">
+    <form @submit.prevent="startGame">
       <h4>Choose a Deck:</h4>
       <input type="number" placeholder="1">
-      <button class="btn btn-warning btn-lg" @click="startGame">Start</button>
+      <button class="btn btn-warning btn-lg" type="submit">Start</button>
     </form>
   </div>
 </template>
 
 <script>
-
+  //not sure if this goes here or just card.vue
+  import player from "@/components/player.vue"
+  import opponent from "@/components/opponent.vue"
 
   export default {
     name: 'Game',
@@ -25,18 +27,19 @@
           gameConfig: {
             playerName: "",
             opponent: 1,
-            set: 4,
+            set: 2,
           },
           newGame: {
             playerId: -1,
-            opponentId: -1
+            opponentId: -1,
+            gameId: ''
           }
         }
       }
     },
     methods: {
       startGame() {
-        this.$store.dispatch("getGame", this.game);
+        this.$store.dispatch("startGame", this.game);
       },
       ready() {
         return this.game.playerId > -1 && this.game.opponentId > -1
