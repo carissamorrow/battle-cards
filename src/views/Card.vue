@@ -1,8 +1,8 @@
 <template>
   <div class="Cards container-fluid">
-    <button @click="">FIGHT!</button>
+    <button @click="attack">FIGHT!</button>
     <div class="row">
-      <player class="col-12 border rounded m-2">
+      <player v-on:setPlayer="playerCard" class="col-12 border rounded m-2">
       </player>
     </div>
     <opponent v-on:setOpponent="opponentCard" class=" col-12 border rounded m-2">
@@ -42,6 +42,10 @@
     },
     methods: {
       opponentCard(cardId) {
+        console.log(cardId)
+        this.attack.opponentCardId = cardId
+      },
+      playerCard(cardId) {
         console.log(cardId)
         this.attack.opponentCardId = cardId
       }
