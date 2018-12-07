@@ -1,8 +1,7 @@
 <template>
   <div class="Cards">
+
   </div>
-
-
 </template>
 
 <script>
@@ -10,7 +9,9 @@
 
   export default {
     name: 'Cards',
+    components: {
 
+    }
   }
 </script>
 <style>

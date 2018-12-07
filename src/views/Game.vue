@@ -1,17 +1,50 @@
+//home view
 <template>
-  <div class="Game">
+  <div class="Game container-fluid">
+    <form v-on:submit.prevent="startGame">
+      <h3>Your Name Here:</h3>
+      <input type="text" v-model="game.gameConfig.playerName" placeholder="name">
+    </form>
+    <form @submit.prevent="set">
+      <h3>Choose a Deck:</h3>
+      <input type="number" placeholder="1">
+      <button class="btn btn-warning btn-lg" @click="startGame">Start</button>
+    </form>
   </div>
-
 </template>
 
 <script>
-
+  import router from '../router.js'
 
   export default {
     name: 'Game',
-
+    data() {
+      return {
+        game: {
+          gameConfig: {
+            playerName: "",
+            opponent: 1,
+            set: 4
+          }
+        }
+      }
+    },
+    methods: {
+      startGame() {
+        this.$store.dispatch("newGame", this.game);
+      }
+    },
+    startNewGame() {
+      router.push({ name: 'game' })
+    },
+    // components: {
+    //   opponent,
+    //   player
+    // }
   }
 </script>
+
+
 <style>
   .Game {
     font-size: 50px;
