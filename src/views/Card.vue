@@ -1,6 +1,6 @@
 <template>
   <div class="Cards container-fluid">
-    <button @click="attack">FIGHT!</button>
+    <button v-on:click="fight">FIGHT!</button>
     <div class="row">
       <player v-on:setPlayer="playerCard" class="col-12 border rounded m-2">
       </player>
@@ -47,7 +47,14 @@
       },
       playerCard(cardId) {
         console.log(cardId)
-        this.attack.opponentCardId = cardId
+        this.attack.playerCardId = cardId
+      },
+      fight() {
+        var data = {
+          id: this.game.id,
+          attack: this.attack
+        }
+        this.$store.dispatch('attack', data)
       }
     }
   }

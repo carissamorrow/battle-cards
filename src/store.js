@@ -59,7 +59,7 @@ export default new Vuex.Store({
     attack({ commit }, payload) {
       cardapi.put("/" + payload.id, payload.attack)
         .then(res => {
-          commit("setGame", res.data)
+          commit("setGame", res.data.game)
         })
     }
   }
