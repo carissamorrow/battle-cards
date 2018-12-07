@@ -1,24 +1,16 @@
 //home view
 <template>
-  <div class="home container-fluid">
-    <button :disabled="!ready()" :class="{'btn-success':ready()}" class="btn btn-primary" @click="startGame">Start Game</button>
-    <div class="row justify-content-around">
-      <div class="col-5">
-        <div @click="newGame.playerId=player.id" :class="{'border-success': newGame.playerId == player.id}" class="border rounded m-2"
-          v-for="player in players">
-          {{player.name}}
-          <img :src="player.img" height="200">
-        </div>
-      </div>
-      <div class="col-5">
-        <div @click="newGame.opponentId=opponent.id" :class="{'border-success': newGame.opponentId == opponent.id}"
-          class="border rounded m-2" v-for="opponent in opponents">
-          {{opponent.name}}
-          <img :src="opponent.img" height="200">
-        </div>
-      </div>
-
-    </div>
+  <div class="game container-fluid">
+    <h1>Welcome To The Best Game EVER</h1>
+    <form v-on:submit.prevent="startGame">
+      <h4>Enter your name here:</h4>
+      <input type="text" v-model="game.gameConfig.playerName" placeholder="name">
+    </form>
+    <form @submit.prevent="set">
+      <h4>Choose a Deck:</h4>
+      <input type="number" placeholder="1">
+      <button class="btn btn-warning btn-lg" @click="startGame">Start</button>
+    </form>
   </div>
 </template>
 
@@ -64,7 +56,7 @@
 
 
 <style>
-  .Game {
+  .game {
     font-size: 50px;
     font-stretch: expanded;
     color: aquamarine;

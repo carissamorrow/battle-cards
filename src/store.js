@@ -4,7 +4,8 @@ import axios from 'axios'
 import router from './router'
 
 let cardapi = axios.create({
-  baseURL: 'https://battlecardz.herokuapp.com/api/games'
+  baseURL: 'https://battlecardz.herokuapp.com/api/games',
+  timeout: 3000
 })
 
 Vue.use(Vuex)
