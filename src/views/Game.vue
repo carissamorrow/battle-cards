@@ -33,11 +33,12 @@
     methods: {
       startGame() {
         this.$store.dispatch("newGame", this.game);
+      },
+      ready() {
+        return this.newGame.playerId > -1 && this.newGame.opponentId > -1
       }
     },
-    startNewGame() {
-      router.push({ name: 'game' })
-    },
+
     // components: {
     //   opponent,
     //   player

@@ -12,8 +12,8 @@
   export default {
     name: 'Cards',
     components: {
-      player,
-      opponent
+      // player,
+      // opponent
     },
     data() {
       return {
