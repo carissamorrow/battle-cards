@@ -22,7 +22,7 @@
     },
     computed: {
       player() {
-        return this.$store.state.game._player
+        return this.$store.state.game.player
       }
     },
     methods: {}

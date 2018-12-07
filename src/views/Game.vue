@@ -36,7 +36,7 @@
     },
     methods: {
       startGame() {
-        this.$store.dispatch("newGame", this.game);
+        this.$store.dispatch("getGame", this.game);
       },
       ready() {
         return this.game.playerId > -1 && this.game.opponentId > -1

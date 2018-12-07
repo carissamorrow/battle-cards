@@ -22,10 +22,10 @@
     },
     computed: {
       opponent() {
-        return this.$store.state.game._opponent
+        return this.$store.state.game.opponent
       },
       gameId() {
-        return this.$store.state.game._id
+        return this.$store.state.game.id
       }
     },
     methods: {
