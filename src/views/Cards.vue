@@ -8,6 +8,8 @@
 </template>
 
 <script>
+  import player from "@/components/player.vue"
+  import opponent from "@/components/opponent.vue"
 
   export default {
     name: 'Cards',

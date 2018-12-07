@@ -45,6 +45,7 @@ export default new Vuex.Store({
       cardapi.get("/games/" + gameId)
         .then(res => {
           commit('setGame', res.data)
+          router.push({ name: 'Game' })
         })
     },
     startGame({ commit }, newGame) {
