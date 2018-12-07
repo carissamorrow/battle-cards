@@ -7,8 +7,13 @@
       <input type="text" v-model="game.gameConfig.playerName" placeholder="name">
     </form>
     <form @submit.prevent="startGame">
-      <h4>Choose a Deck:</h4>
-      <input type="number" placeholder="1">
+      <select class="form-control-lg" v-model="game.opponents" name="opponents">
+        <option value="1">Opponent 1</option>
+        <option value="2">Opponent 2</option>
+        <option value="3">Opponent 3</option>
+        <option value="4">Opponent 4</option>
+      </select><br>
+
       <button class="btn btn-warning btn-lg" type="submit">Start</button>
     </form>
   </div>
@@ -16,8 +21,8 @@
 
 <script>
   //not sure if this goes here or just card.vue
-  import player from "@/components/player.vue"
-  import opponent from "@/components/opponent.vue"
+  // import player from "@/components/player.vue"
+  // import opponent from "@/components/opponent.vue"
 
   export default {
     name: 'Game',

@@ -1,9 +1,12 @@
 <template>
-  <div class="Cards">
+  <div class="Cards container-fluid">
     <div class="row">
-      <player class="col-6"></player>
-      <opponent class="col-6"></opponent>
+      <player class="col-12 border rounded m-2">
+      </player>
     </div>
+    <opponent class="col-12 border rounded m-2">
+    </opponent>
+  </div>
   </div>
 </template>
 
@@ -23,8 +26,7 @@
     },
     mounted() {
       if (!this.game.id) {
-        this.$store.dispatch("getGame", this.$route.params.game)
-
+        this.$store.dispatch("getGame", this.$route.params.id)
       }
     },
     computed: {

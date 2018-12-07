@@ -1,13 +1,15 @@
 <template>
-  <div class="opponent container-fluid">
+  <div class="opponent container-fluid ">
     <div class="row">
-      <div class="col-6">
+      <div class="col-4">
         {{opponent.name}}
       </div>
-      <div class="col-6">
-        <img :src="opponent.img" height="200" alt="">
+      <div class="col-6" v-for="cardopponent in opponent.hand">
+        <img :src="cardopponent.img" height="200" alt="">
+        <p>health: {{cardopponent.health}}</p>
+        <p>attack: {{cardopponent.attack}}</p>
+        <p>defense: {{cardopponent.defense}}</p>
       </div>
-      <p class="col-12">{{opponent.health}}</p>
     </div>
   </div>
 </template>
@@ -33,7 +35,7 @@
         let newAttack = {
           attack: attackName
         }
-        this.$store.dispatch("attack", { attack: newAttack, gameId: this.gameId })
+        this.$store.dispatch("attack", { attack: newAttack, id: this.id })
       }
     }
   }

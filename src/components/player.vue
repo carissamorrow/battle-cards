@@ -1,13 +1,15 @@
 <template>
   <div class="player container-fluid ">
     <div class="row">
-      <div class="col-6">
+      <div class="col-4">
         {{player.name}}
       </div>
-      <div class="col-6">
-        <img :src="player.img" height="200" alt="">
+      <div class="col-6" v-for="cardplayer in player.hand">
+        <img :src="cardplayer.img" height="200" alt="">
+        <p>health: {{cardplayer.health}}</p>
+        <p>attack: {{cardplayer.attack}}</p>
+        <p>defense: {{cardplayer.defense}}</p>
       </div>
-      <p class="col-12">{{player.health}}</p>
     </div>
   </div>
 </template>

@@ -28,26 +28,25 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    getPlayer({ commit }) {
-      cardapi.get('player')
-        .then(res => {
-          console.log('player', res.data)
-          commit('setPlayer', res.data)
-        })
-    },
-    getOpponent({ commit }) {
-      cardapi.get('opponent')
-        .then(res => {
-          console.log('opponent', res.data)
-          commit('setOpponent', res.data)
-        })
-    },
+    // getPlayer({ commit }) {
+    //   cardapi.get('player')
+    //     .then(res => {
+    //       console.log('player', res.data)
+    //       commit('setPlayer', res.data)
+    //     })
+    // },
+    // getOpponent({ commit }) {
+    //   cardapi.get('opponent')
+    //     .then(res => {
+    //       console.log('opponent', res.data)
+    //       commit('setOpponent', res.data)
+    //     })
+    // },
     getGame({ commit }, gameId) {
-      debugger
       cardapi.get("/" + gameId)
         .then(res => {
           commit('setGame', res.data)
-          router.push({ name: 'Game' })//is this right??
+          router.push({ name: 'Card', params: { id: res.data.id } })//is this right??
         })
     },
     startGame({ commit }, newGame) {
@@ -58,7 +57,7 @@ export default new Vuex.Store({
         })
     },
     attack({ commit }, payload) {
-      cardapi.put("/" + payload.gameId, payload.attack)
+      cardapi.put("/" + payload.id, payload.attack)
         .then(res => {
           commit("setGame", res.data)
         })
