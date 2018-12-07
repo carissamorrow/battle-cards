@@ -3,7 +3,7 @@ import Router from 'vue-router'
 // @ts-ignore
 import Game from './views/Game.vue'
 // @ts-ignore
-import Cards from './views/Cards.vue'
+import Card from './views/Card.vue'
 
 Vue.use(Router)
 
@@ -15,9 +15,9 @@ export default new Router({
       component: Game
     },
     {
-      path: '/Cards',
-      name: 'Cards',
-      component: Cards
+      path: '/Card',
+      name: 'Card',
+      component: Card
     }
   ]
 })

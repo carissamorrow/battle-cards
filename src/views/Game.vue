@@ -51,10 +51,14 @@
       }
     },
 
-    // components: {
-    //   opponent,
-    //   player
-    // }
+    computed: {
+      players() {
+        return this.$store.state.players
+      },
+      opponents() {
+        return this.$store.state.opponents
+      }
+    }
   }
 </script>
 

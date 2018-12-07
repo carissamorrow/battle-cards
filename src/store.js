@@ -27,36 +27,36 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    getPlayers({ commit }) {
-      cardapi.get('players')
+    getPlayer({ commit }) {
+      cardapi.get('player')
         .then(res => {
-          console.log('players', res.data)
-          commit('setPlayers', res.data)
+          console.log('player', res.data)
+          commit('setPlayer', res.data)
         })
     },
-    getOpponents({ commit }) {
-      cardapi.get('opponents')
+    getOpponent({ commit }) {
+      cardapi.get('opponent')
         .then(res => {
-          console.log('opponents', res.data)
-          commit('setOpponents', res.data)
+          console.log('opponent', res.data)
+          commit('setOpponent', res.data)
         })
     },
     getGame({ commit }, gameId) {
-      cardapi.get("/games/" + gameId)
+      cardapi.get("/game/" + gameId)
         .then(res => {
           commit('setGame', res.data)
           // router.push({ name: 'Game' }) not sure if i need this
         })
     },
     startGame({ commit }, newGame) {
-      cardapi.post("/games", newGame)
+      cardapi.post("/game", newGame)
         .then(res => {
           commit('setGame', res.data.game)
           router.push({ name: 'game', params: { gameId: res.data.game._id } })
         })
     },
     attack({ commit }, payload) {
-      cardapi.put("/games/" + payload.gameId, payload.attack)
+      cardapi.put("/game/" + payload.gameId, payload.attack)
         .then(res => {
           commit("setGame", res.data)
         })
