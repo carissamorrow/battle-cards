@@ -1,6 +1,6 @@
 <template>
-  <div class="player container-fluid ">
-    <div class="row">
+  <div v-if="gameId" class=" player container-fluid ">
+    <div class=" row">
       <div class="col-4">
         {{player.name}}
       </div>
@@ -29,6 +29,9 @@
     computed: {
       player() {
         return this.$store.state.game.player
+      },
+      gameId() {
+        return this.$store.state.game.id
       }
     },
     methods: {}

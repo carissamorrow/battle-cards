@@ -1,12 +1,12 @@
 <template>
-  <div class="opponent container-fluid ">
+  <div v-if="gameId" class="opponent container-fluid ">
     <div class="row">
       <div class="col-3" v-for="cardopponent in opponent.hand">
         <div v-on:click="$emit('setOpponent', cardopponent.id); opponentId=cardopponent.id" :class="{'border-success': opponentId == cardopponent.id}"
           class="card">
           <div class="card-content">
             <div v-if="cardopponent.visible">
-              {{opponent.name}}
+              {{cardopponent.name}}
               <img class :src="cardopponent.img" alt="">
               <h4>health: {{cardopponent.health}}</h4>
               <h4>attack: {{cardopponent.attack}}</h4>
@@ -48,6 +48,7 @@
       }
     }
   }
+
 
 </script>
 
