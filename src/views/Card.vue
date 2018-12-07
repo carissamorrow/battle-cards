@@ -5,7 +5,7 @@
       <player class="col-12 border rounded m-2">
       </player>
     </div>
-    <opponent class="col-12 border rounded m-2">
+    <opponent v-on:setOpponent="opponentCard" class=" col-12 border rounded m-2">
     </opponent>
   </div>
   </div>
@@ -24,6 +24,10 @@
     },
     data() {
       return {
+        attack: {
+          playerCardId: '',
+          opponentCardId: ''
+        }
       }
     },
     mounted() {
@@ -34,6 +38,12 @@
     computed: {
       game() {
         return this.$store.state.game
+      }
+    },
+    methods: {
+      opponentCard(cardId) {
+        console.log(cardId)
+        this.attack.opponentCardId = cardId
       }
     }
   }
