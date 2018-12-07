@@ -20,9 +20,7 @@
 </template>
 
 <script>
-  //not sure if this goes here or just card.vue
-  // import player from "@/components/player.vue"
-  // import opponent from "@/components/opponent.vue"
+
 
   export default {
     name: 'Game',

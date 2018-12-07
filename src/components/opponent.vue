@@ -5,8 +5,8 @@
         <div class="card">
           <div class="card-content">
             <div v-if="cardopponent.visible">
-              <img class :src="cardopponent.img" alt="">
               {{opponent.name}}
+              <img class :src="cardopponent.img" alt="">
               <h4>health: {{cardopponent.health}}</h4>
               <h4>attack: {{cardopponent.attack}}</h4>
               <h4>defense: {{cardopponent.defense}}</h4>
