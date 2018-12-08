@@ -15,12 +15,14 @@
 <script>
   import player from "@/components/player.vue"
   import opponent from "@/components/opponent.vue"
+  import gameEnd from '@/components/gameEnd.vue'
 
   export default {
     name: 'Cards',
     components: {
       player,
-      opponent
+      opponent,
+      gameEnd
     },
     data() {
       return {
@@ -55,7 +57,11 @@
           attack: this.attack
         }
         this.$store.dispatch('attack', data)
+      },
+      quit(gameId) {
+        this.$store.dispatch("quit", gameId);
       }
+
     }
   }
 </script>

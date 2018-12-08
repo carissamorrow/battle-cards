@@ -3,6 +3,7 @@
     <div class=" row">
       <div class="col-4">
         {{player.name}}
+        <h4>Cards Left: {{player.remainingCards}}</h4>
       </div>
       <div class="card" v-for="cardplayer in player.hand">
         <div v-on:click="$emit('setPlayer', cardplayer.id); playerId=cardplayer.id" :class="{'border-success': playerId == cardplayer.id}">

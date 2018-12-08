@@ -18,9 +18,9 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
+    <h4>Cards Left: {{opponent.remainingCards}}</h4>
   </div>
 </template>
 

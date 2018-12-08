@@ -25,6 +25,10 @@ export default new Vuex.Store({
     },
     setGame(state, game) {
       state.game = game
+    },
+    reset(state, game) {
+      state.game = game
+
     }
   },
   actions: {
@@ -49,6 +53,13 @@ export default new Vuex.Store({
         .then(res => {
           commit("setGame", res.data.game)
         })
-    }
+    },
+    // quit({ commit }, gameId) {
+    //   cardapi.delete('/' + gameId)
+    //     .then(res => router.push({ name: 'startGame' }))
+    //   commit('setPlayers'),
+    //     commit('setOpponents'),
+    //     commit('reset', {})
+    // }
   }
 })
