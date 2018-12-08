@@ -13,7 +13,8 @@
               <h4>defense: {{cardopponent.defense}}</h4>
             </div>
             <div v-else>
-              <img class="img-responsive" src="//placehold.it/200x300" alt="">
+              <img class="img-responsive" src="https://d1u5p3l4wpay3k.cloudfront.net/hearthstone_gamepedia/d/df/Card_back-Ragnaros.png?version=58a5ef605a105d350b1e8d4da1873ac8"
+                alt="">
             </div>
           </div>
         </div>
