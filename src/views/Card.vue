@@ -1,16 +1,18 @@
 <template>
-  <div class="Cards container-fluid">
-    <button v-on:click="fight">FIGHT!</button>
-    <div class="row">
-      <player v-on:setPlayer="playerCard" class="col-12 border rounded m-2">
-      </player>
+  <div>
+    <div class="Cards container-fluid">
+      <button v-on:click="fight">FIGHT!</button>
+      <div class="row">
+        <player v-on:setPlayer="playerCard" class="col-12 border rounded m-2">
+        </player>
+      </div>
+      <opponent v-on:setOpponent="opponentCard" class=" col-12 border rounded m-2">
+      </opponent>
+      <gameEnd></gameEnd>
     </div>
-    <opponent v-on:setOpponent="opponentCard" class=" col-12 border rounded m-2">
-    </opponent>
-  </div>
-  </div>
   </div>
 </template>
+
 
 <script>
   import player from "@/components/player.vue"
