@@ -54,7 +54,7 @@ export default new Vuex.Store({
           commit("setGame", res.data.game)
         })
     },
-    reset({ commit, dispatch }) {
+    gameEnd({ commit, dispatch }) {
       commit('newNewGame')
     }
   }

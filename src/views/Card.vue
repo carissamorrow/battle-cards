@@ -60,10 +60,6 @@
         }
         this.$store.dispatch('attack', data)
       },
-      // quit(gameId) {
-      //   this.$store.dispatch("quit", gameId);
-      // }
-
     }
   }
 </script>
