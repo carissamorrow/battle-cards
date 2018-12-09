@@ -1,3 +1,5 @@
+
+permalink: /index.html
 # battle-cards
 
 ## Project setup
