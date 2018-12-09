@@ -26,10 +26,6 @@ export default new Vuex.Store({
     setGame(state, game) {
       state.game = game
     },
-    reset(state, game) {
-      state.game = game
-
-    }
   },
   actions: {
 
