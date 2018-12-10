@@ -1,13 +1,15 @@
 <template>
   <div>
     <div class="Cards container-fluid">
-      <button v-on:click="fight">FIGHT!</button>
-      <div class="row">
-        <player v-on:setPlayer="playerCard" class="col-12 border rounded m-2">
-        </player>
+      <div v-if="!game.over">
+        <button v-on:click="fight">FIGHT!</button>
+        <div class="row">
+          <player v-on:setPlayer="playerCard" class="col-12 border rounded m-2">
+          </player>
+        </div>
+        <opponent v-on:setOpponent="opponentCard" class=" col-12 border rounded m-2">
+        </opponent>
       </div>
-      <opponent v-on:setOpponent="opponentCard" class=" col-12 border rounded m-2">
-      </opponent>
       <gameEnd v-if="game.over"></gameEnd>
     </div>
   </div>

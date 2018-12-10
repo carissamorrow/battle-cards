@@ -1,13 +1,13 @@
 <template>
   <div class="gameEnd">
-    <div v-if="game.winner">
-      <h3>Tie!</h3>
-    </div>
-    <div v-if="!game.winner== game.player">
+    <div v-if="!game.winner== player.name">
       <h3>Just Not Your Day</h3>
     </div>
-    <div v-if="game.winner== game.player">
+    <div v-else-if="game.winner== player.name">
       <h2>You Win</h2>
+    </div>
+    <div v-else>
+      <h3>Tie!</h3>
     </div>
   </div>
 </template>

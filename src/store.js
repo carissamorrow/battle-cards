@@ -24,6 +24,7 @@ export default new Vuex.Store({
       state.opponents = opponents
     },
     setGame(state, game) {
+      console.log(game)
       state.game = game
     },
     newNewGame(state) {
