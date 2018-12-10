@@ -1,12 +1,12 @@
 <template>
   <div class="gameEnd">
-    <div v-if="game.opponent.dead && game.player.dead" class="gameEnd">
+    <div v-if="game.winner">
       <h3>Tie!</h3>
     </div>
-    <div class="gameEnd" v-if="!game.opponent.dead && game.player.dead">
+    <div v-if="!game.winner== game.player">
       <h3>Just Not Your Day</h3>
     </div>
-    <div class="gameEnd" v-if="game.opponent.dead && !game.player.dead">
+    <div v-if="game.winner== game.player">
       <h2>You Win</h2>
     </div>
   </div>
