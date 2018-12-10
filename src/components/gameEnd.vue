@@ -29,7 +29,7 @@
         return this.$store.state.game;
       },
       player() {
-        return this.$store.state.player
+        return this.$store.state.game.player
       }
     },
     components: {

@@ -10,7 +10,7 @@
         <opponent v-on:setOpponent="opponentCard" class=" col-12 border rounded m-2">
         </opponent>
       </div>
-      <gameEnd v-if="game.over"></gameEnd>
+      <gameEnd v-else></gameEnd>
     </div>
   </div>
 </template>

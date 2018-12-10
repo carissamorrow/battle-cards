@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-    <h4>Card Deck Lives Left: {{opponent.remainingCards}}</h4>
+    <h4>Card Deck Lives Left: {{opponent.remainingCards + opponent.hand.length}}</h4>
   </div>
 </template>
 

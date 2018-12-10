@@ -5,24 +5,22 @@ import router from './router'
 
 let cardapi = axios.create({
   baseURL: 'https://battlecardz.herokuapp.com/api/games',
-  timeout: 3000
+
 })
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    players: [],
-    opponents: [],
     game: {}
   },
   mutations: {
-    setPlayers(state, players) {
-      state.players = players
-    },
-    setOpponents(state, opponents) {
-      state.opponents = opponents
-    },
+    // setPlayers(state, players) {
+    //   state.players = players
+    // },
+    // setOpponents(state, opponents) {
+    //   state.opponents = opponents
+    // },
     setGame(state, game) {
       console.log(game)
       state.game = game
@@ -55,8 +53,8 @@ export default new Vuex.Store({
           commit("setGame", res.data.game)
         })
     },
-    gameEnd({ commit, dispatch }) {
-      commit('newNewGame')
-    }
+    // gameEnd({ commit, dispatch }) {
+    //   commit('newNewGame')
+    // }
   }
 })
